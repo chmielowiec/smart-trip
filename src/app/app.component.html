@@ -12,12 +12,12 @@
     <div class="container">
 
       <div class="row">
-        <div class="col-md-4" *ngFor="let trip of trips; trackBy: trackByTrip" @fadeIn>
-          <app-trip></app-trip>
+        <div class="col-md-4" *ngFor="let trip of trips | async; trackBy: trackByTrip" @fadeIn>
+          <app-trip [trip]="trip"></app-trip>
         </div>
 
-        <div class="col-md-12" *ngIf="!trips.length">
-          No results :-(
+        <div class="col-md-12" *ngIf="!(trips | async)?.length">
+          Enter search criteria above to explore the best places in the World!
         </div>
       </div>
     </div>

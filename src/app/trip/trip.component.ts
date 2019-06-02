@@ -1,4 +1,5 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import {Trip} from './trip';
 
 @Component({
   selector: 'app-trip',
@@ -7,10 +8,9 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 })
 export class TripComponent implements OnInit {
 
-  @ViewChild('placeholder') placeholderElement: ElementRef;
+  @Input() public trip: Trip;
 
-  public price = Math.random() * 500 + 200;
-  public signature = Math.random();
+  @ViewChild('placeholder') placeholderElement: ElementRef;
 
   constructor() {
   }

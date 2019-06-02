@@ -12,7 +12,7 @@
     <rect width="100%" height="100%" fill="#1AA0DF"></rect>
     <text x="50%" y="50%" fill="#eceeef" dy=".3em">&#x21bb;</text>
   </svg>
-  <img src="https://loremflickr.com/320/225/travel,hotel&rand={{signature}}" (load)="hidePlaceholder()">
+  <img src="https://loremflickr.com/320/225/travel,hotel&rand={{trip.id}}" (load)="hidePlaceholder()">
   <div class="card-body">
     <p class="card-text">
       This is a wider card with supporting text below as a natural lead-in to additional content.
@@ -23,7 +23,7 @@
         <button type="button" class="btn btn-sm btn-primary">Buy</button>
         <button type="button" class="btn btn-sm btn-outline-secondary">Details</button>
       </div>
-      <small class="text-muted">from {{price | currency}}</small>
+      <small class="price">{{trip.price | currency}}</small>
     </div>
   </div>
 </div>
