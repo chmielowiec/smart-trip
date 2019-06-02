@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {animate, style, transition, trigger} from '@angular/animations';
+import {SearchCriteria} from './search/search-criteria';
 
 @Component({
   selector: 'app-root',
@@ -24,7 +25,11 @@ export class AppComponent {
 
   trips: Array<any>;
 
-  search($event: any) {
-    this.trips = new Array($event.target.length);
+  search(searchCriteria: SearchCriteria) {
+    this.trips = new Array(searchCriteria.target.length);
+  }
+
+  trackByTrip(index: number, trip: any) {
+    return trip;
   }
 }

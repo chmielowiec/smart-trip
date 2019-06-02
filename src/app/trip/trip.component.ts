@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-trip',
@@ -7,12 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TripComponent implements OnInit {
 
+  @ViewChild('placeholder') placeholderElement: ElementRef;
+
   public price = Math.random() * 500 + 200;
   public signature = Math.random();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+  hidePlaceholder() {
+    this.placeholderElement.nativeElement.remove();
+  }
 }

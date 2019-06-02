@@ -1,6 +1,10 @@
-<form class="row" #form="ngForm" (ngSubmit)="onSearch(form)">
+<form class="row" #form="ngForm" (ngSubmit)="onSearch(form.value)">
   <div class="col">
-    Wyszukaj wycieczkę
-    <input type="text" name="target" ngModel class="form-control form-control-lg" placeholder="Podaj cel">
+    Search trip
+    <input type="text"
+           name="target"
+           ngModel
+           class="form-control form-control-lg"
+           placeholder="Specify target">
   </div>
 </form>

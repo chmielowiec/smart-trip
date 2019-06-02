@@ -1,5 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
 
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+:root {
+  --theme-color: #05377E;
+  --secondary-color: #1AA0DF;
+}
+
 .bg-booking {
-  background-color: #05377E;
+  background-color: var(--theme-color);
+}
+
+.btn-primary {
+  background-color: var(--theme-color);
+  border-color: var(--theme-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+}
+
+a {
+  color: var(--secondary-color);
+}
+
+a:hover {
+  color: var(--theme-color);
 }

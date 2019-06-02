@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {NgForm} from '@angular/forms';
+import {SearchCriteria} from './search-criteria';
 
 @Component({
   selector: 'app-search',
@@ -14,10 +14,12 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit() {
+    const criteria = {target: '12'};
+    this.onSearch(criteria);
   }
 
-  onSearch(form: NgForm) {
-    this.search.emit(form.value);
+  onSearch(searchCriteria: SearchCriteria) {
+    this.search.emit(searchCriteria);
   }
 
 }
