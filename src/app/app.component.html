@@ -13,7 +13,7 @@
 
       <div class="row">
         <div class="col-md-4" *ngFor="let trip of trips | async; trackBy: trackByTrip" @fadeIn>
-          <app-trip [trip]="trip"></app-trip>
+          <app-trip [trip]="trip" (buy)="onBuy()"></app-trip>
         </div>
 
         <div class="col-md-12" *ngIf="!(trips | async)?.length">

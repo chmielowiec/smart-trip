@@ -8,7 +8,8 @@ import {LogoComponent} from './logo/logo.component';
 import {TripComponent} from './trip/trip.component';
 import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {LazyLoadImageModule} from 'ng-lazyload-image';
+import {ModalModule, ProgressbarModule} from 'ngx-bootstrap';
+import {PaymentModalComponent} from './payment-modal/payment-modal.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +18,17 @@ import {LazyLoadImageModule} from 'ng-lazyload-image';
     FooterComponent,
     SearchComponent,
     LogoComponent,
-    TripComponent
+    TripComponent,
+    PaymentModalComponent
+  ],
+  entryComponents: [
+    PaymentModalComponent
   ],
   imports: [
     BrowserAnimationsModule,
     FormsModule,
-    LazyLoadImageModule
+    ProgressbarModule.forRoot(),
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,25 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">
+    <ng-container *ngIf="running">Processing payment</ng-container>
+    <ng-container *ngIf="!running">You are all done</ng-container>
+  </h4>
+</div>
+<div class="modal-body">
+  <progressbar *ngIf="running"
+               [animate]="true"
+               [striped]="true"
+               [max]="max"
+               [value]="progress"></progressbar>
+
+  <div *ngIf="!running" class="text-center">
+    <h1>Have fun!</h1>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button"
+          class="btn btn-sm btn-primary"
+          (click)="bsModalRef.hide()"
+          [disabled]="running">
+    Close
+  </button>
+</div>
