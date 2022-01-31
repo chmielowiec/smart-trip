@@ -5,6 +5,7 @@ COPY package*.json /app/
 RUN npm install
 COPY ./ /app/
 #ARG configuration=production
+ENV NODE_OPTIONS=--openssl-legacy-provider
 RUN npm run build -- --output-path=./dist/out --configuration production
 
 # Stage 1, based on Nginx, to have only the compiled app, ready for production with Nginx
